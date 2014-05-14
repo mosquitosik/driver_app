@@ -8,4 +8,15 @@
       </h1>
     </section>
   </aside>
+  <div class="span8">
+    <% if @user.cars.any? %>
+        <h3>Cars (<%= @user.cars.count %>)</h3>
+        <ol class="cars">
+          <%= render @cars %>
+        </ol>
+        <%= will_paginate @cars %>
+    <%else%>
+     <h2> No Cars </h2>
+    <% end %>
+  </div>
 </div>
